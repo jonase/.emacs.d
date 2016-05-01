@@ -23,6 +23,7 @@
       x-select-enable-clipboard t)
 
 (dolist (package '(clojure-mode
+		   aggressive-indent
 		   cider
 		   company
 		   paredit
@@ -33,7 +34,8 @@
 (add-hook 'clojure-mode-hook
 	  (lambda ()
 	    (paredit-mode)
-	    (company-mode)))
+	    (company-mode)
+	    (aggressive-indent-mode)))
 
 (add-hook 'cider-mode-hook
 	  (lambda ()
