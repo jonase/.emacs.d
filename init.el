@@ -40,6 +40,8 @@
 	    (company-mode)
 	    (eldoc-mode)))
 
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
+
 (setq cider-repl-pop-to-buffer-on-connect nil
       cider-prompt-for-symbol nil
       cider-prompt-save-file-on-load 'always-save)
