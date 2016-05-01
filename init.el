@@ -34,11 +34,16 @@
 (add-hook 'clojure-mode-hook
 	  (lambda ()
 	    (paredit-mode)
-	    (company-mode)
 	    (aggressive-indent-mode)))
 
 (add-hook 'cider-mode-hook
 	  (lambda ()
+	    (company-mode)
+	    (eldoc-mode)))
+
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda ()
+	    (paredit-mode)
 	    (company-mode)
 	    (eldoc-mode)))
 
