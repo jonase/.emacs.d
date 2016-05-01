@@ -41,6 +41,8 @@
 	    (company-mode)
 	    (eldoc-mode)))
 
+(add-hook 'cider-repl-mode-hook #'paredit-mode)
+
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda ()
 	    (paredit-mode)
