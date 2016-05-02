@@ -34,7 +34,12 @@
 (add-hook 'clojure-mode-hook
 	  (lambda ()
 	    (paredit-mode)
-	    (aggressive-indent-mode)))
+	    (aggressive-indent-mode)
+	    (define-clojure-indent
+	      (context '(:defn (1)))
+	      (GET '(:defn (1)))
+	      (POST '(:defn (1)))
+	      (PUT '(:defn (1))))))
 
 (add-hook 'cider-mode-hook
 	  (lambda ()
