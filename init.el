@@ -28,6 +28,7 @@
 		   cider
 		   company
 		   paredit
+		   magit
 		   zenburn-theme))
   (unless (package-installed-p package)
     (package-install package)))
