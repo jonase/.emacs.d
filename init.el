@@ -18,17 +18,18 @@
 (fringe-mode 0)
 (global-hl-line-mode 1)
 
-(setq default-input-method "MacOSX"
-      mac-option-modifier nil
-      mac-command-modifier 'meta
-      x-select-enable-clipboard t)
+(when (eq system-type 'darwin)
+  (setq default-input-method "MacOSX"
+	mac-option-modifier nil
+	mac-command-modifier 'meta
+	x-select-enable-clipboard t))
 
 (dolist (package '(clojure-mode
 		   aggressive-indent
 		   cider
 		   company
 		   paredit
-		   magit
+		   dockerfile-mode
 		   zenburn-theme))
   (unless (package-installed-p package)
     (package-install package)))
@@ -58,7 +59,9 @@
 
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
-(setq cider-repl-pop-to-buffer-on-connect nil
+(setq cider-repl-display-help-banner nil
+      cider-repl-pop-to-buffer-on-connect nil
+      cider-repl-use-pretty-printing t
       cider-prompt-for-symbol nil
       cider-prompt-save-file-on-load 'always-save)
 
