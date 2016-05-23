@@ -58,7 +58,11 @@
 	    (company-mode)
 	    (eldoc-mode)))
 
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
+(add-hook 'before-save-hook
+	  (lambda ()
+	    (delete-trailing-whitespace)
+	    (when (eq 'clojure-mode major-mode)
+	      (clojure-sort-ns))))
 
 (setq cider-repl-display-help-banner nil
       cider-repl-pop-to-buffer-on-connect nil
