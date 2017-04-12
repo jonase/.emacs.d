@@ -49,11 +49,11 @@
 	    (paredit-mode)
 	    (aggressive-indent-mode)
 	    (define-clojure-indent
-	      (context '(:defn (1)))
-	      (GET '(:defn (1)))
-	      (POST '(:defn (1)))
-	      (PUT '(:defn (1)))
-	      (DELETE '(:defn (1))))))
+	      (context '(2))
+	      (GET '(2))
+	      (POST '(2))
+	      (PUT '(2))
+	      (DELETE '(2)))))
 
 (add-hook 'cider-mode-hook
 	  (lambda ()
